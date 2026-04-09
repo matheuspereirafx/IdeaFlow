@@ -1,4 +1,6 @@
-# 🧠 Meu Framework — Agentes de Validação de Ideias
+![Ideaflow](./banner.svg)
+
+# Ideaflow — Agentes de Validação de Ideias
 
 > Pipeline completo de validação de ideias de negócio usando agentes de IA no Claude Code.
 > Da ideia bruta ao plano de negócio institucional, sem sair do terminal.
@@ -25,10 +27,10 @@ Cada agente tem uma responsabilidade específica e passa o output para o próxim
 
 ```bash
 # Clone o repositório
-git clone https://github.com/matheuspereirafx/meu-framework.git
+git clone https://github.com/matheuspereirafx/ideaflow.git
 
 # Entre na pasta
-cd meu-framework
+cd ideaflow
 
 # Abra o Claude Code
 claude
@@ -166,38 +168,25 @@ Consolida todos os outputs em documentos institucionais. Identifica gaps e faz p
 ## Estrutura de Pastas
 
 ```
-meu-framework/
+ideaflow/
 ├── README.md
+├── CLAUDE.md
+├── banner.svg
 ├── .claude/
 │   └── skills/
 │       ├── agente-ideia/
-│       │   ├── SKILL.md
-│       │   └── bmad-manifest.json
+│       │   └── SKILL.md
 │       ├── pesquisa-mercado/
-│       │   ├── SKILL.md
-│       │   └── bmad-manifest.json
+│       │   └── SKILL.md
 │       ├── agente-estrategia/
-│       │   ├── SKILL.md
-│       │   └── bmad-manifest.json
+│       │   └── SKILL.md
 │       ├── agente-financeiro/
-│       │   ├── SKILL.md
-│       │   └── bmad-manifest.json
+│       │   └── SKILL.md
 │       ├── agente-mvp/
-│       │   ├── SKILL.md
-│       │   └── bmad-manifest.json
+│       │   └── SKILL.md
 │       └── skill-plano-negocio/
-│           ├── SKILL.md
-│           └── bmad-manifest.json
+│           └── SKILL.md
 └── output/
-    ├── ideia.md
-    ├── pesquisa-mercado.md
-    ├── estrategia.md
-    ├── financeiro.md
-    ├── financeiro.xlsx
-    ├── mvp.md
-    ├── resumo-executivo.md
-    ├── plano-negocio.md
-    └── plano-negocio.docx
 ```
 
 ---
