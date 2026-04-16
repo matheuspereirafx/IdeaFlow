@@ -1,244 +1,154 @@
 ![Ideaflow](./banner.svg)
+<div align="center">
+  # 💡 Ideaflow — Business Validation Agents
+  
+  **A comprehensive business idea validation pipeline using AI agents within Claude Code. From raw concept to institutional business plan, all inside your terminal.**
 
-# Ideaflow — Agentes de Validação de Ideias
+  [![Claude AI](https://img.shields.io/badge/Claude_Code-7575FF?style=for-the-badge&logo=anthropic&logoColor=white)](https://anthropic.com/)
+  [![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+  [![Business Strategy](https://img.shields.io/badge/Strategy-Lean_Startup-orange?style=for-the-badge)](https://en.wikipedia.org/wiki/Lean_startup)
 
-> Pipeline completo de validação de ideias de negócio usando agentes de IA no Claude Code.
-> Da ideia bruta ao plano de negócio institucional, sem sair do terminal.
-
----
-
-## O que é isso?
-
-Um framework de agentes especializados que guia você por todo o processo de validação de uma ideia de negócio antes de investir tempo e dinheiro em desenvolvimento.
-
-Cada agente tem uma responsabilidade específica e passa o output para o próximo — formando um pipeline encadeado que vai da **clareza da ideia** até o **plano de negócio completo**.
-
----
-
-## Pré-requisitos
-
-- [Node.js](https://nodejs.org) v20+
-- [Claude Code](https://claude.ai/code) instalado
-- Conta na Anthropic com acesso ao Claude Code
+  <p align="center">
+    <a href="#-overview">Overview</a> •
+    <a href="#-full-workflow">Workflow</a> •
+    <a href="#-agents">Agents</a> •
+    <a href="#-installation">Installation</a> •
+    <a href="#-output">Output</a>
+  </p>
+</div>
 
 ---
 
-## Instalação
+## ✨ Overview
 
+**Ideaflow** is a specialized agent framework that guides you through the entire validation process of a business idea before you spend time and money on development.
+
+The framework consists of chained agents where the output of one serves as the context for the next — forming a streamlined pipeline that moves from **ideation clarity** to a **comprehensive business plan**.
+
+---
+
+## 🔄 Full Workflow
+
+The agents are designed to trigger in a specific sequence:
+
+```text
+/agente-ideia (Concept & Problem Root)
+        ↓ [Auto-triggers]
+/pesquisa-mercado (Market Research & Competitors)
+        ↓ Generates: ideia.md + pesquisa-mercado.md
+/agente-estrategia (Business Model & Positioning)
+        ↓ Generates: estrategia.md
+/agente-financeiro (Unit Economics & Projections)
+        ↓ Generates: financeiro.md + financeiro.xlsx
+/agente-mvp (Validation Strategy & Experiments)
+        ↓ Generates: mvp.md
+/skill-plano-negocio (Institutional Consolidation)
+        ↓ Generates: executive-summary.md + business-plan.docx
+```
+
+---
+
+## 🤖 Agents
+
+### 🧠 `/agente-ideia` (The Concept)
+The entry point of the pipeline. It transforms a raw idea into a validated root problem and an idealized solution.
+* **Root Cause Analysis:** 5 Whys, Ishikawa (Fishbone) diagrams, and Job To Be Done (JTBD).
+* **Pain Mapping:** Identifying the ideal intervention point.
+* **Team Alignment:** Dao (Sun Tzu) principles and KSA (Knowledge, Skills, Abilities) gap mapping.
+
+### 🔍 `/pesquisa-mercado` (Market Research)
+Automatically triggered by the Idea Agent. It performs web research to structure market data.
+* **Competitor Analysis:** Direct/Indirect competitors with real pricing and gap analysis.
+* **Market Sizing:** TAM/SAM/SOM based on real market average ticket prices.
+* **Persona:** Detailed profiles including digital behavior and current alternative solutions.
+
+### 📈 `/agente-estrategia` (Strategy)
+Builds the full positioning based on previous research.
+* **Business Model Canvas:** 9 blocks with sourced information.
+* **Blue Ocean (ERRC):** Eliminate, Reduce, Raise, and Create grid vs. competitors.
+* **Revenue Model:** Justified pricing based on market benchmarks.
+
+### 💰 `/agente-financeiro` (Financials)
+Calculates complete financial viability based on one-by-one assumptions.
+* **Unit Economics:** LTV, CAC, Payback, and Churn analysis.
+* **Projections:** 24-month roadmap across 3 scenarios (Pessimistic, Realistic, Optimistic).
+* **Automatic Alerts:** Triggers warnings if LTV/CAC ratio is unhealthy (< 3x).
+
+### 🧪 `/agente-mvp` (Validation)
+Defines the shortest path to validate high-risk hypotheses.
+* **Risk Ranking:** Identifies 🔴 High / 🟡 Medium / 🟢 Low risk hypotheses.
+* **Experiment Design:** Smoke tests, Concierge MVPs, Landing Pages, or Feature-light builds.
+* **KPIs:** Retention, Conversion (Free to Paid), and NPS goals.
+
+### 📄 `/skill-plano-negocio` (Business Plan)
+Consolidates all outputs into institutional-grade documents (Markdown and Word).
+
+---
+
+## 📦 Installation & Setup
+
+### Prerequisites
+* **Node.js** v20+
+* **Claude Code** installed and authenticated.
+
+### Setup
 ```bash
-# Clone o repositório
-git clone https://github.com/matheuspereirafx/ideaflow.git
+# 1. Clone the repository
+git clone [https://github.com/matheuspereirafx/ideaflow.git](https://github.com/matheuspereirafx/ideaflow.git)
 
-# Entre na pasta
+# 2. Enter the directory
 cd ideaflow
 
-# Abra o Claude Code
+# 3. Open Claude Code
 claude
 ```
 
 ---
 
-## Fluxo Completo
+## 📂 Output Folder Structure
 
-```
-/agente-ideia
-    ↓ [chama automaticamente]
-/pesquisa-mercado
-    ↓ gera: ideia.md + pesquisa-mercado.md
-/agente-estrategia
-    ↓ gera: estrategia.md
-/agente-financeiro
-    ↓ gera: financeiro.md + financeiro.xlsx
-/agente-mvp
-    ↓ gera: mvp.md
-/skill-plano-negocio
-    ↓ gera: resumo-executivo.md + plano-negocio.md + plano-negocio.docx
-```
+Upon completion, the `output/` folder will contain:
+
+| File | Content |
+| :--- | :--- |
+| `ideia.md` | Root problem + Solution + Hypotheses |
+| `pesquisa-mercado.md` | Competitors + Persona + Actual TAM |
+| `estrategia.md` | Canvas + ERRC Grid + Revenue Model |
+| `financeiro.md` | Projections + Unit Economics + Final Verdict |
+| `financeiro.xlsx` | Detailed spreadsheet with 3 scenarios |
+| `mvp.md` | Experiment design + Success metrics |
+| `business-plan.docx` | Full document for investors/stakeholders |
 
 ---
 
-## Agentes
+## 🏗️ Handoff to Development
 
-### `/agente-ideia`
-Ponto de entrada do pipeline. Transforma uma ideia bruta em problema raiz validado e solução idealizada.
-
-**Modo 1 — Problema Raiz:**
-- Captura do problema
-- 5 Porquês até a causa raiz
-- Job To Be Done → Job Statement
-- Mapa de Dor → ponto de intervenção ideal
-- Ishikawa (se multifatorial)
-- Scorecard de viabilidade do problema
-
-**Modo 2 — Idealização:**
-- Entendimento da solução
-- Foco radical (o que NÃO fazer)
-- Não clientes em 3 níveis
-- Dao — alinhamento de equipe (Sun Tzu)
-- CHA — mapa de competências e lacunas
-- Síntese + hipóteses por risco
-
-**Output:** `output/ideia.md`
-
----
-
-### `/pesquisa-mercado`
-Chamada automaticamente pelo `/agente-ideia` na Fase 1A. Pesquisa na web e estrutura os dados de mercado.
-
-**Cobre:**
-- Concorrentes diretos e indiretos com preços reais
-- Ticket médio do mercado (média dos concorrentes)
-- Reviews negativos — gap analysis (top 3 gaps)
-- TAM/SAM/SOM com ticket médio real como base de cálculo
-- Persona detalhada: nome fictício, dores, comportamento digital, o que usa hoje, frase sobre o problema
-- Tendências do setor
-
-**Output:** `output/pesquisa-mercado.md`
-
----
-
-### `/agente-estrategia`
-Usa os outputs anteriores para construir o posicionamento completo. Só pergunta ao usuário o que a pesquisa não respondeu.
-
-**Cobre:**
-- Business Model Canvas (9 blocos com fonte de cada informação)
-- Grade ERRC — Eliminar, Reduzir, Aumentar, Criar vs concorrentes
-- TAM/SAM/SOM refinado com receita potencial calculada
-- Modelo de receita com justificativa baseada no ticket médio do mercado
-- Síntese estratégica consolidada
-
-**Output:** `output/estrategia.md`
-
----
-
-### `/agente-financeiro`
-Coleta premissas uma a uma e calcula a viabilidade financeira completa.
-
-**Coleta:**
-- Ticket médio, CAC, churn mensal, custos fixos, investimento inicial, clientes mês 1, crescimento mensal
-
-**Calcula:**
-- Unit economics: LTV, LTV/CAC, payback do CAC, break-even em clientes
-- Alerta automático se LTV/CAC < 3x
-- Projeção 24 meses em 3 cenários: Pessimista (-40%) / Realista / Otimista (+40%)
-- Análise de sensibilidade: churn +40%, CAC +40%, ticket -20%
-- Parecer final: 🟢 Viável / 🟡 Condicional / 🔴 Inviável
-
-**Output:** `output/financeiro.md` + `output/financeiro.xlsx`
-
----
-
-### `/agente-mvp`
-Define o menor caminho para validar as hipóteses mais arriscadas.
-
-**Faz:**
-- Pega hipóteses do `ideia.md` e confirma com o usuário
-- Ranqueia por risco: 🔴 Alto / 🟡 Médio / 🟢 Baixo
-- Decide por hipótese:
-  - **Desejo/Conversão** → experimento sem código (entrevista, landing page, smoke test, concierge)
-  - **Funcional/Retenção** → features mínimas necessárias + o que NÃO construir
-- Define indicadores de aderência: ativação, retenção semana 1 e 4, conversão free→pago, NPS
-
-**Output:** `output/mvp.md`
-
----
-
-### `/skill-plano-negocio`
-Consolida todos os outputs em documentos institucionais. Identifica gaps e faz perguntas antes de gerar.
-
-**Gera:**
-- `resumo-executivo.md` — síntese de 1 página para uso interno
-- `plano-negocio.md` — documento completo com 10 seções
-- `plano-negocio.docx` — versão Word para investidores/bancos
-
-**Seções do documento completo:**
-1. Sumário Executivo
-2. O Problema
-3. A Solução
-4. Mercado
-5. Persona
-6. Modelo de Negócio
-7. Financeiro
-8. MVP e Validação
-9. Equipe e Estrutura
-10. Visão e Roadmap
-
----
-
-## Estrutura de Pastas
-
-```
-ideaflow/
-├── README.md
-├── CLAUDE.md
-├── banner.svg
-├── .claude/
-│   └── skills/
-│       ├── agente-ideia/
-│       │   └── SKILL.md
-│       ├── pesquisa-mercado/
-│       │   └── SKILL.md
-│       ├── agente-estrategia/
-│       │   └── SKILL.md
-│       ├── agente-financeiro/
-│       │   └── SKILL.md
-│       ├── agente-mvp/
-│       │   └── SKILL.md
-│       └── skill-plano-negocio/
-│           └── SKILL.md
-└── output/
-```
-
----
-
-## Output Final
-
-Ao final do pipeline, a pasta `output/` contém:
-
-| Arquivo | Conteúdo |
-|---------|----------|
-| `ideia.md` | Problema raiz + solução + hipóteses |
-| `pesquisa-mercado.md` | Concorrentes + persona + TAM real |
-| `estrategia.md` | Canvas + ERRC + modelo de receita |
-| `financeiro.md` | Projeções + LTV/CAC + parecer |
-| `financeiro.xlsx` | Planilha com 3 cenários |
-| `mvp.md` | Experimentos + indicadores de aderência |
-| `resumo-executivo.md` | Síntese de 1 página |
-| `plano-negocio.md` | Documento institucional completo |
-| `plano-negocio.docx` | Versão Word para investidores |
-
----
-
-## Handoff para Desenvolvimento
-
-Após validar a ideia, copie os outputs para o projeto de desenvolvimento:
+Once the idea is validated, you can seamlessly transition to the development phase using **Ideaflow Dev**:
 
 ```bash
-cp -r output/ ../meu-projeto/docs/
-cd ../meu-projeto
+# Copy outputs to your dev project
+cp -r output/ ../my-rails-app/docs/
+cd ../my-rails-app
+
+# Start the dev pipeline
 claude
-# → /agente-prd (próxima fase)
+> /workflow-spec-completa
 ```
 
 ---
 
-## Frameworks Utilizados
+## 🤝 License
 
-| Framework | Agente | Finalidade |
-|-----------|--------|-----------|
-| 5 Porquês | agente-ideia | Causa raiz do problema |
-| Job To Be Done | agente-ideia | Trabalho real do cliente |
-| Mapa de Dor | agente-ideia | Ponto de intervenção ideal |
-| Ishikawa | agente-ideia | Causas multifatoriais |
-| Oceano Azul (ERRC) | agente-estrategia | Diferenciação competitiva |
-| Business Model Canvas | agente-estrategia | Modelo de negócio |
-| TAM/SAM/SOM | pesquisa + estrategia | Tamanho de mercado |
-| Unit Economics | agente-financeiro | LTV, CAC, payback |
-| Dao (Sun Tzu) | agente-ideia | Alinhamento de equipe |
-| CHA | agente-ideia | Mapa de competências |
+MIT — feel free to use, modify, and distribute.
 
 ---
 
-## Licença
-
-MIT — use, modifique e distribua livremente.
+<div align="center">
+  <p>Envisioned and developed by <a href="https://github.com/matheuspereirafx">Matheus Pereira</a></p>
+  
+  <p>
+    <a href="https://github.com/matheuspereirafx">
+      <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+    </a>
+  </p>
+</div>
