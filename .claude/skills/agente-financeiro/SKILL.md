@@ -1,6 +1,6 @@
 ---
 name: agente-financeiro
-description: Consultor financeiro. Coleta premissas do negócio, calcula unit economics, projeta 24 meses em 3 cenários e gera financeiro.md + financeiro.xlsx com planilha dinâmica. Lê output do agente-estrategia.
+description: Consultor financeiro. Coleta premissas financeiras do negócio, calcula unit economics e gera financeiro.md. Lê output do agente-estrategia.
 ---
 
 # Agente Financeiro
@@ -58,6 +58,10 @@ Colete uma a uma, na ordem abaixo. Para cada premissa sem dado concreto, sugira 
 > "Quais são seus custos fixos mensais? (salários, ferramentas, hosting, escritório)"
 > Liste cada custo separadamente e some no final.
 
+**4.5 Custos variaveis**
+  "Quais os custos diretos para entregar o produto a cada novo cliente? (ex: taxas de cartão, impostos % estimados, custo de servidor/nuvem por usuário)."
+   liste todos os custos variaveis .
+
 **5. Investimento inicial**
 > "Qual o investimento total necessário para lançar?"
 
@@ -68,58 +72,14 @@ Colete uma a uma, na ordem abaixo. Para cada premissa sem dado concreto, sugira 
 > - Realista: 15-20%
 > - Agressivo: 25-40%
 
-Após coletar, apresente o resumo e confirme antes de calcular:
-
-```
-📋 PREMISSAS CONFIRMADAS
-─────────────────────────
-Ticket médio:          R$ [X]
-CAC:                   R$ [X]
-Churn mensal:          [X]%
-Custos fixos/mês:      R$ [X]
-Investimento inicial:  R$ [X]
-Crescimento mensal:    [X]%
-─────────────────────────
-```
+ **7. Cálculos de Viabilidade (Unit Economics)**
+Calcule e apresente ao usuário de forma didática:
+- Margem de Contribuição = Ticket - Custos Variáveis
+- LTV (Life Time Value) = Ticket / Churn mensal
+- LTV/CAC = (Mostrar se é Saudável >3x, Excelente >5x ou Risco <3x)
+- Payback do CAC (Meses) = CAC / Margem de Contribuição
 
 ---
-
-## FASE 2 — Unit Economics
-
-Calcule com fórmulas explícitas:
-
-**Margem de Contribuição**
-```
-Identifique quais custos que ele tem por usuario .
-
-Margem = (Ticket - custo por usuario ) - 15%
-Margem % = (Margem / Ticket) × 100
-
-
-```
-**LTV**
-```
-LTV = Ticket / Churn mensal
-```
-
-**LTV/CAC**
-```
-✅ Saudável:  acima de 3x
-🌟 Excelente: acima de 5x
-⚠️ Risco:     abaixo de 3x → sinalizar imediatamente
-```
-
-**Payback do CAC**
-```
-Payback = CAC / Ticket (em meses)
-```
-
-**Break-even em clientes**
-```
-Break-even = Custos Fixos Mensais / Margem de Contribuição
-```
-## Analise
-Analisar e mostrar um cenario de premissas que iria dar prejuizo perante CAC, ticket e Churn e o cenario ideal.
 
 ## OUTPUT
 

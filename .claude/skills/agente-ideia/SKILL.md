@@ -234,8 +234,3 @@ _Gerado pelo Agente Ideia_
 3. [Hipótese 3]
 
 ---
-_Pronto para o Agente de Viabilidade_
-```
-
-Ao finalizar:
-> "✅ ideia.md salvo em output/. Quando quiser, chame o /agente-viabilidade."

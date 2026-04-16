@@ -55,8 +55,6 @@ Uma pergunta por vez. Exemplos de gaps comuns:
 **Se faltou estrutura da empresa:**
 > "Qual é o formato da empresa? (MEI, LTDA, ainda não definido) Você tem sócios?"
 
-**Se faltou roadmap:**
-> "Qual é o plano dos próximos 6-12 meses após o MVP validado?"
 
 Após preencher todos os gaps, confirme:
 > "Tenho todas as informações necessárias. Posso gerar o Plano de Negócio agora?"
@@ -224,20 +222,6 @@ _Data: [data atual]_
 | Payback CAC | ... meses |
 | Break-even (clientes) | ... |
 
-### 7.3 Projeções — Cenário Realista
-[Resumo mês a mês dos principais indicadores]
-
-### 7.4 Break-even por Cenário
-| Cenário | Mês | Capital Consumido |
-|---------|-----|-----------------|
-| Pessimista | ... | R$ ... |
-| Realista | ... | R$ ... |
-| Otimista | ... | R$ ... |
-
-### 7.5 Parecer de Viabilidade
-🟢/🟡/🔴 [VIÁVEL/CONDICIONAL/INVIÁVEL]
-[Justificativa + condições + riscos principais]
-
 ## 8. MVP e Validação
 ### 8.1 Hipóteses por Risco
 | # | Hipótese | Risco | Abordagem |
@@ -388,6 +372,5 @@ Ao finalizar, informe:
 > "✅ Documentos gerados em output/:
 > - resumo-executivo.md — síntese de 1 página
 > - plano-negocio.md — documento completo
-> - plano-negocio.docx — versão Word institucional
->
+
 > O framework de validação está completo. Para avançar ao desenvolvimento, copie os outputs para a pasta do projeto e chame o /agente-prd."
