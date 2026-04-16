@@ -69,10 +69,7 @@ Builds the full positioning based on previous research.
 * **Revenue Model:** Justified pricing based on market benchmarks.
 
 ### 💰 `/agente-financeiro` (Financials)
-Calculates complete financial viability based on one-by-one assumptions.
 * **Unit Economics:** LTV, CAC, Payback, and Churn analysis.
-* **Projections:** 24-month roadmap across 3 scenarios (Pessimistic, Realistic, Optimistic).
-* **Automatic Alerts:** Triggers warnings if LTV/CAC ratio is unhealthy (< 3x).
 
 ### 🧪 `/agente-mvp` (Validation)
 Defines the shortest path to validate high-risk hypotheses.
@@ -102,22 +99,6 @@ cd ideaflow
 # 3. Open Claude Code
 claude
 ```
-
----
-
-## 📂 Output Folder Structure
-
-Upon completion, the `output/` folder will contain:
-
-| File | Content |
-| :--- | :--- |
-| `ideia.md` | Root problem + Solution + Hypotheses |
-| `pesquisa-mercado.md` | Competitors + Persona + Actual TAM |
-| `estrategia.md` | Canvas + ERRC Grid + Revenue Model |
-| `financeiro.md` | Projections + Unit Economics + Final Verdict |
-| `financeiro.xlsx` | Detailed spreadsheet with 3 scenarios |
-| `mvp.md` | Experiment design + Success metrics |
-| `business-plan.docx` | Full document for investors/stakeholders |
 
 ---
 
